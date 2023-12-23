@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title%}Car Page{% endblock %}
+{% load crispy_forms_tags %}
+{% block content %}
+<h4 class="text-center">User Profile </h4>
+    <div class="mb-2">
+        <h3>user : {{user.username}}</h3>
+        <h3 class="mb-5">Email : {{user.email}}</h3>
+        <button class="btn btn-info"><a href="{% url 'edit_profile_page' %}" class="text-decoration-none">change user data</a></button>
+    </div>
+{% endblock %}

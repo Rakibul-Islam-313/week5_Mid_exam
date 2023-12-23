@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title%}Car buying Page{% endblock %}
+{% load crispy_forms_tags %}
+{% block content %}
+<h2 class="text-center">Car details here</h2>
+<div>
+    <h5>Car Name : {{car.car_name}}</h5>
+    <h5>Car Price: {{car.car_price}}</h5>
+</div>
+<form method="post">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-danger mx-4 mb-4"><a href="{% url 'order_history_page' %}" class="text-decoration-none">Buy</a></button>
+</form>
+
+{% endblock %}

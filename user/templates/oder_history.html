@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block title%}Car order History Page{% endblock %}
+{% load crispy_forms_tags %}
+{% block content %}
+<h3 class="text-center">Your Order History </h3>
+    {% if orders %}
+    {% for i in orders %}
+        <div class="">
+            <div class="card" style="width: 18rem;">
+                <img src="{{i.car.image.url}}" class="card-img-top" alt="Car pic">
+                <div class="card-body mb-3">
+                    <h6>Order ID : {{i.id}}</h6>
+                    <h6>Car : {{i.car.car_name}}</h6>
+                    <h6>Order Date : {{i.order_date}}</h6>
+                    <h4 class="text-center">Sold out</h4>
+                </div>
+              </div>
+        </div>
+    {% endfor %}
+    {% else %}
+    <p>No orders found </p>
+    {% endif %}
+
+{% endblock %}
